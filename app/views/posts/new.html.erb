@@ -1,0 +1,28 @@
+<div class="col-xs-12 col-sm-8">
+	<h2>記事の作成<h2>
+	<%= form_with model: @post do |f| %>
+		<div class="form-group">
+			<%= f.label :タイトル %>
+			<%= f.text_field :title %>
+		</div>
+		<div class="form-group">
+			<%= f.label :タグ %>
+			<%= f.collection_select :tag_id, Tag.all, :id, :tag %>
+		</div>
+		<div class="form-group">
+			<%= f.label :画像 %>
+			<%= f.attchment_field :image %>
+		</div>
+		<div class="form-group">
+			<%= f.label :本文 %>
+			<%= f.text_area :content %>
+		</div>
+		<div class="form-group">
+			<%= f.label :ステータス %>
+			<%= f.select :status %>
+		</div>
+		<div class="form-group">
+			<%= f.submit "作成" %>
+		</div>
+	<% end %>
+</div>

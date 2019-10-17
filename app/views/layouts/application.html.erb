@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+		<header>
+			<div class="header-container">
+				<div class="header-row">
+					<p>Railsブログ</p>
+				</div>
+				<nav class="header-nav">
+					<ul>
+						<li><%= link_to 'プロフィール', profile_path %></li>	
+						<li><%= link_to 'ブログ', privacy_path %></li>
+            <li><%= link_to 'お問い合わせ', sitemap_path %></li>	
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="container">
+      <%= yield %>
+			<div class="col-xs-12 col-sm-4">
+
+			</div>
+		</div>
+		<footer>	
+			<nav class="footer-left">
+				<ul>
+					<li><%= link_to 'プライバシーポリシー', privacy_path %></li>	
+					<li><%= link_to 'サイトマップ', sitemap_path %></li>
+				</ul>
+			</nav>
+			<div class="footer-right">
+				<p>©︎Copyright2019 Railsブログ All Rights Reserved.</p>
+			</div>
+		</footer>
+  </body>
+</html>
