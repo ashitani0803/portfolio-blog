@@ -26,8 +26,11 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 gem 'bootstrap-sass'
 
-gem 'rails-i18n'
+gem 'enum_help'
 
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+
+gem "refile-mini_magick"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

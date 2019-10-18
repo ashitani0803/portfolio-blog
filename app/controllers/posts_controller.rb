@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
 	def create
-		post = Post.new(post_arams)
+		post = Post.new(post_params)
 		if post.save
 			flash[:success] = "記事を作成しました"
 			redirect_to post_path(post.id) 
