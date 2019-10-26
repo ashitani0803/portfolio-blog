@@ -1,25 +1,21 @@
 <div class="col-xs-12 col-sm-8">
 	<h2>記事の編集<h2>
-	<%= form_with model: @post do |f| %>
+	<%= form_with model: @post, local: true do |f| %>
 		<div class="form-group">
-			<%= f.label :タイトル %>
+			<%= f.label :タイトル %><br>
 			<%= f.text_field :title %>
 		</div>
 		<div class="form-group">
-			<%= f.label :タグ %>
-			<%= f.select :tag %>
+			<%= f.label :タグ %><br>
+			<%= f.text_field :tag_name, value: @tag_lists %>
 		</div>
 		<div class="form-group">
-			<%= f.label :画像 %>
-			<%= f.attchment_field :image %>
-		</div>
-		<div class="form-group">
-			<%= f.label :本文 %>
-			<%= f.text_area :content %>
-		</div>
-		<div class="form-group">
-			<%= f.label :ステータス %>
+			<%= f.label :ステータス %><br>
 			<%= f.select :status, Post.statuses.keys %>
+		</div>
+		<div class="form-group">
+			<%= f.label :本文 %><br>
+			<%= f.rich_text_area :body %>
 		</div>
 		<div class="form-group">
 			<%= f.submit "更新" %>

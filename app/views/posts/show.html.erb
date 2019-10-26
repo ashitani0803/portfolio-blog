@@ -1,2 +1,14 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="col-vs-12 col-sm-8">
+  <ul>
+    <li><%= @post.created_at.strftime('%Y-%m-%d') %>(更新日：<%= @post.updated_at.strftime('%Y-%m-%d') %>)</li>
+	  <li><%= @post.status %></li>
+    <li><%= link_to '編集', edit_post_path(@post.id) %></li>
+  </ul>
+	<p><%= link_to @post.title, post_path(@post.id) %></p>
+  <ul>
+    <% @post.tags.each do |tag| %>
+      <li><%= link_to tag.tag_name, posts_path(tag_id: tag.id) %></li>
+	 <% end %>
+  </ul>
+	<p><%= @post.body %></p>
+</div>	
