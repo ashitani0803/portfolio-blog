@@ -14,12 +14,15 @@
 			<div class="header-container">
 				<div class="header-row">
 					<p>Railsブログ</p>
+					<%= link_to new_post_path do %>
+						<i class="fas fa-edit"></i>
+					<% end %>
 				</div>
 				<nav class="header-nav">
 					<ul>
 						<li><%= link_to 'プロフィール', profile_path %></li>	
-						<li><%= link_to 'ブログ', privacy_path %></li>
-            <li><%= link_to 'お問い合わせ', sitemap_path %></li>	
+						<li><%= link_to 'ブログ', posts_path %></li>
+            <li><%= link_to 'お問い合わせ', new_contact_path %></li>	
 					</ul>
 				</nav>
 			</div>

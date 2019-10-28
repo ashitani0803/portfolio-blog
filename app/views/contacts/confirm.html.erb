@@ -1,0 +1,24 @@
+<div class="col-xs-12 col-sm-8">
+	<h2>お問い合わせ確認画面<h2>
+	<%= form_with model: @contact, local: true, url: contact_path do |f| %>
+		<div class="form-group">
+			<%= f.label :お名前 %><br>
+			<%= @contact.name %>
+		</div>
+		<div class="form-group">
+			<%= f.label :メールアドレス %><br>
+			<%= @contact.email %>
+		</div>
+		<div class="form-group">
+			<%= f.label :題名 %><br>
+			<%= @contact.title %>
+		</div>
+		<div class="form-group">
+			<%= f.label :メッセージ本文 %><br>
+			<%= @contact.body %>
+		</div>
+		<div class="form-group"><br>
+			<%= f.submit "送信" %>
+		</div>
+	<% end %>
+</div>

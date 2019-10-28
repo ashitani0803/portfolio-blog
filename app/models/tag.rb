@@ -4,5 +4,4 @@ class Tag < ApplicationRecord
 
 	validates :tag_name, uniqueness: true
 
-	accepts_nested_attributes_for :posts
 end

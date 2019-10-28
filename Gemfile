@@ -29,6 +29,8 @@ gem 'coffee-rails', '~> 5.0'
 
 gem 'bootstrap-sass'
 
+gem 'font-awesome-sass', '~> 5.4.1'
+
 gem 'enum_help'
 
 gem 'pry-byebug'

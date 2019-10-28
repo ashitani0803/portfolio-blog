@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 	get '/profile' => 'abouts#profile'
 	get '/privacy' => 'abouts#privacy'
 	get '/sitemap' => 'abouts#sitemap'
+	post '/contact/new/confirm' => 'contacts#confirm'
 
 	resources :posts
-	resource :tags, only: [:new, :create]
+	resource :tag, only: [:create]
+	resource :contact, only: [:new, :create]
 end
