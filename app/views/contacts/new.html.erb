@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-sm-8">
 	<h2>お問い合わせ<h2>
-	<%= form_with model: @contact, local: true, url: contact_new_confirm_path do |f| %>
+	<%= form_with model: @contact, local: true, url: confirm_contact_path do |f| %>
 		<div class="form-group">
 			<%= f.label :お名前 %><br>
 			<%= f.text_field :name %>

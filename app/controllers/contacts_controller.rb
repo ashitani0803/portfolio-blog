@@ -10,7 +10,9 @@ class ContactsController < ApplicationController
 
 	def create
 		contact = Contact.new(contact_params)
-		if contact.save
+		if params[:back]
+			render :new
+		elsif contact.save
 			flash[:success] = "お問い合わせを受け付けました"
 			redirect_to root_path
 		else
