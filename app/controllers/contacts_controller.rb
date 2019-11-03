@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
 		if params[:back]
 			render :new
 		elsif contact.save
+			ContactMailer.send_mail(contact).deliver
 			flash[:success] = "お問い合わせを受け付けました"
 			redirect_to root_path
 		else
