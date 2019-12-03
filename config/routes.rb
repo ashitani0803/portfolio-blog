@@ -5,7 +5,12 @@ Rails.application.routes.draw do
 	get '/privacy' => 'abouts#privacy'
 	get '/sitemap' => 'abouts#sitemap'
 
-	resources :posts
+	resources :posts do
+        collection do
+            get :search
+        end
+    end
+
 	resource :tag, only: [:create]
 	resource :contact, only: [:new, :create] do
 		collection do

@@ -6,10 +6,15 @@ class Post < ApplicationRecord
 
 	enum status: { draft: 0, published: 1 }
 
+    def self.search(search)
+        return Post.all unless search
+        Post.where(['title LIKE ?', "%#{search}%"])
+    end
+
 	def save_posts(tags)
 		current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
 
-  	old_tags = current_tags - tags
+      	old_tags = current_tags - tags
 		new_tags = tags - current_tags
 
 		#destroy
