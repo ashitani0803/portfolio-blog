@@ -34,6 +34,8 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'enum_help'
 
 gem 'pry-byebug'
+
+gem 'devise'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

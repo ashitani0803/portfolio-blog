@@ -14,7 +14,7 @@
 			<div class="header-container">
 				<div class="header-row">
 					<p>Railsブログ</p>
-					<%= link_to new_post_path do %>
+					<%= link_to new_admin_post_path do %>
 						<i class="fas fa-edit"></i>
 					<% end %>
 				</div>
@@ -22,20 +22,28 @@
 					<ul>
 						<li><%= link_to 'プロフィール', profile_path %></li>	
 						<li><%= link_to 'ブログ', posts_path %></li>
-            <li><%= link_to 'お問い合わせ', new_contact_path %></li>	
+                        <li><%= link_to 'お問い合わせ', new_contact_path %></li>	
 					</ul>
 				</nav>
 			</div>
 		</header>
 		<div class="container">
-      <%= yield %>
-			<div class="col-xs-12 col-sm-4">
-
-			</div>
+            <%= yield %>
 		</div>
 		<footer>	
 			<nav class="footer-left">
 				<ul>
+                    <li>
+                    <% if admin_signed_in? %> 
+                        <%= link_to destroy_admin_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } do %>
+                            <i class="fas fa-sign-out-alt"></i>
+                        <% end %>
+                    <% else %>
+                        <%= link_to new_admin_session_path do %>
+                            <i class="fas fa-sign-in-alt"></i>
+                        <% end %>
+                    <% end %>
+                    </li>
 					<li><%= link_to 'プライバシーポリシー', privacy_path %></li>	
 					<li><%= link_to 'サイトマップ', sitemap_path %></li>
 				</ul>

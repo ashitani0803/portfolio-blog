@@ -1,6 +1,6 @@
 <div class="col-sm-12">
 	<h2>記事の作成<h2>
-	<%= form_with model: @post, local: true do |f| %>
+	<%= form_with model: @post, url: admin_posts_path, local: true do |f| %>
 		<div class="form-group">
 			<%= f.label :タイトル %><br>
 			<%= f.text_field :title %>

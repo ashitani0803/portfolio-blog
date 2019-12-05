@@ -21,7 +21,7 @@
 			<%= f.submit "更新" %>
 		</div>
 		<div class="form-group">
-			<%= link_to "記事を削除", post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？"} %>
+			<%= link_to "記事を削除", admin_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } %>
 		</div>
 	<% end %>
 </div>
