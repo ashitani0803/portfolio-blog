@@ -1,4 +1,7 @@
 <div class="col-xs-12 col-sm-8">
+    <% if params[:tag_id] %>
+        <%= @tag.tag_name %>
+    <% end %>
     <% @posts.each do |post| %>
 	    <% if post.published? %>
 	        <ul>
