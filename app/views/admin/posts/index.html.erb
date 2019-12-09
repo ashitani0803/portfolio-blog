@@ -1,21 +1,24 @@
-<% @posts.each do |post| %>
-	<% if post.published? %>
-    <div class="col-xs-12 col-sm-8">
+<div class="col-xs-12 col-sm-8">
+    <% if params[:tag_id] %>
+        <%= @tag.tag_name %>
+    <% end %>
+    <% @posts.each do |post| %>
+	    <% if post.published? %>
 	    <ul>
-	      <li><%= post.created_at.strftime('%Y-%m-%d') %></li>
+	        <li><%= post.created_at.strftime('%Y-%m-%d') %></li>
 	    	<li><%= post.status %></li>
 	    	<li><%= link_to '編集', edit_admin_post_path(post.id) %></li>
 	    </ul>
 	    <p><%= link_to post.title, admin_post_path(post.id) %></p>
 	    <ul>
 		    <% post.tags.each do |tag| %>
-		      <li><%= link_to tag.tag_name, posts_path(tag_id: tag.id) %></li>
+		      <li><%= link_to tag.tag_name, admin_posts_path(tag_id: tag.id) %></li>
 		    <% end %>
 	    </ul>
         <ul>
             <li><%= strip_tags(post.body.to_s).gsub(/[\n]/,"").strip.truncate(30) %></li>
         </ul>
-    </div>
-	<% end %>
-<% end %>
+        <% end %>
+    <% end %>
+</div>
 

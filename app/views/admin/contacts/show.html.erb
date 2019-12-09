@@ -1,0 +1,11 @@
+<div class="col-sm-12">
+    <ul>
+        <li><%= @contact.created_at.strftime('%Y-%m-%d') %></li>
+    </ul>
+    <ul>
+        <li><%= @contact.name %></li>
+        <li><%= @contact.email %></li>
+        <li><%= @contact.title %></li>
+    </ul>
+    <p><%= @contact.body %></p>
+</div>

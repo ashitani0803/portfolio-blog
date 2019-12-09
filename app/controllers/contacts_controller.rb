@@ -1,7 +1,8 @@
 class ContactsController < ApplicationController
-  def new
+
+	def new 
 		@contact = Contact.new
-  end
+	end
 
 	def confirm
 		@contact = Contact.new(contact_params)
@@ -26,4 +27,5 @@ class ContactsController < ApplicationController
 	def contact_params
 		params.require(:contact).permit(:name, :email, :title, :body)
 	end
+
 end

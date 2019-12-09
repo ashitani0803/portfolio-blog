@@ -3,10 +3,16 @@ class Admin::PostsController < ApplicationController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     def index
-        @posts = Post.all
+        if params[:tag_id]
+            @tag = Tag.find(params[:tag_id])
+            @posts = @tag.posts
+        else
+            @posts = Post.all
+        end
     end
 
     def show
+        @post = Post.find(params[:id])
     end
 
     def new

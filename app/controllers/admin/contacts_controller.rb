@@ -1,0 +1,17 @@
+class Admin::ContactsController < ApplicationController
+    before_action :admin_user?
+
+    def index
+        @contacts = Contact.all
+    end
+
+    def show
+        @contact = Contact.find(params[:id])
+    end
+
+    private
+
+    def admin_user?
+        redirect_to root_path unless admin_signed_in?
+    end
+end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
         resources :posts
+        resources :contacts, only: [:index, :show]
     end
 
 	resources :posts, only: [:index, :show] do
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
     end
 
 	resource :tag, only: [:create]
-	resource :contact, only: [:new, :create] do
+	resource :contacts, only: [:new, :create] do
 		collection do
 			post :confirm
 		end

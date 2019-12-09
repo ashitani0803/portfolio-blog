@@ -25,9 +25,10 @@
 						<li><%= link_to 'プロフィール', profile_path %></li>	
                     <% if admin_signed_in? %>
                         <li><%= link_to 'ブログ', admin_posts_path %></li>
+                        <li><%= link_to 'お問い合わせ', admin_contacts_path %></li>
                     <% else %>
 						<li><%= link_to 'ブログ', posts_path %></li>
-                        <li><%= link_to 'お問い合わせ', new_contact_path %></li>	
+                        <li><%= link_to 'お問い合わせ', new_contacts_path %></li>	
                     <% end %>    
 					</ul>
 				</nav>
