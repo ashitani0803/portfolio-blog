@@ -1,6 +1,6 @@
 <div class="col-sm-12">
 	<h2>お問い合わせ確認画面<h2>
-	<%= form_with model: @contact, local: true, url: contacts_path do |f| %>
+	<%= form_with model: @contact, builder: ContactsHelper::ErrorFormBuilder, local: true, url: contacts_path do |f| %>
 		<div class="form-group">
 			<%= f.label :お名前 %><br>
 			<%= @contact.name %>
