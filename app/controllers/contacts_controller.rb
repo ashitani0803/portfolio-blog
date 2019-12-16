@@ -10,17 +10,19 @@ class ContactsController < ApplicationController
 	end
 
 	def create
-		contact = Contact.new(contact_params)
+		@contact = Contact.new(contact_params)
 		if params[:back]
 			render :new
-		elsif contact.save
-			ContactMailer.send_mail(contact).deliver
-			flash[:success] = "お問い合わせを受け付けました"
-			redirect_to root_path
+		elsif @contact.save
+			ContactMailer.send_mail(@contact).deliver
+			redirect_to complete_contacts_path
 		else
 			render :new
 		end
 	end
+
+    def complete
+    end
 
 	private
 
