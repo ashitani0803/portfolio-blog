@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admin
+    devise_for :user, path: "admin"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 	root 'posts#index'
 	get '/profile' => 'abouts#profile'
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
         resources :posts
+        resource :user, only: [:edit, :update]
         resources :contacts, only: [:index, :show]
     end
 

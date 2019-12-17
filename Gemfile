@@ -38,6 +38,10 @@ gem 'pry-byebug'
 gem 'devise'
 
 gem 'rails-i18n', '~> 6.0'
+
+gem 'refile', require: "refile/rails", github: 'manfe/refile'
+
+gem 'refile-mini_magick'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

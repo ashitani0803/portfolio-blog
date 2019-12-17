@@ -61,7 +61,7 @@ class Admin::PostsController < ApplicationController
 
 
     def admin_user?
-        redirect_to root_path unless admin_signed_in?
+        redirect_to root_path unless user_signed_in?
     end
 
     def set_post
