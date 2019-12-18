@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   def edit
     @user = current_user
   end
-  
+
   def update
     user = current_user
     if user.update(admin_params)
@@ -20,7 +20,7 @@ class Admin::UsersController < ApplicationController
     params.require(:user).permit(:name, :image, :profile)
   end
 
-  def admin_user? 
+  def admin_user?
     redirect_to root_path unless user_signed_in?
   end
 end

@@ -11,4 +11,5 @@
             <li><%= strip_tags(post.body.to_s).gsub(/[\n]/,"").strip.truncate(30) %></li>
         </ul>
     </div>
+    <%= render 'search', user: @user %>
 <% end %>

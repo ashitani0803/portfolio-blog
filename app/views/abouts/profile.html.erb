@@ -1,7 +1,7 @@
 <div class="col-xs-12 col-sm-8">
     <h3><%= @user.name %>のプロフィール</h3>
-    <p><%= attachment_image_tag @user, :image, size: '300x300' %></p>
+    <p><%= attachment_image_tag @user, :image, size: '400x400' %></p>
     <h4><%= @user.name %></h4>
     <p><%= @user.profile %></p>
 </div>
-<%= render 'posts/search_form' %>
+<%= render 'posts/search_form', user: @user %>

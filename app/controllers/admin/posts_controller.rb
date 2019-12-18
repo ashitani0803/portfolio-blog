@@ -12,7 +12,6 @@ class Admin::PostsController < ApplicationController
     end
 
     def show
-        @post = Post.find(params[:id])
     end
 
     def new
@@ -58,7 +57,6 @@ class Admin::PostsController < ApplicationController
     def post_params
         params.require(:post).permit(:title, :status, :body, :tag_id)
     end
-
 
     def admin_user?
         redirect_to root_path unless user_signed_in?

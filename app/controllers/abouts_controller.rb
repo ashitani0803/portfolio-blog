@@ -1,6 +1,7 @@
 class AboutsController < ApplicationController
+    before_action :set_admin
+
 	def profile
-		@user = User.find(1)
 	end
 
 	def privacy
@@ -8,4 +9,10 @@ class AboutsController < ApplicationController
 
 	def sitemap
 	end
+
+    private
+
+    def set_admin
+        @user = User.find(1)
+    end
 end
