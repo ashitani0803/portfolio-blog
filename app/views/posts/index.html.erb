@@ -18,6 +18,7 @@
          </ul>
     	<% end %>
     <% end %>
+    <%= paginate @posts %>
 </div>
-<%= render 'search_form', user: @user %>
+<%= render 'search_form', user: @user, tags: @tags %>
 

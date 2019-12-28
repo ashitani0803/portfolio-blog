@@ -11,4 +11,11 @@
             <%= submit_tag 'Search', :body => nil %>
         <% end %>
     </div>
+    <div class="category">
+        <ul>
+            <% tags.each do |tag| %>
+                <li><%= link_to tag.tag_name, posts_path(tag_id: tag.id) %></li>
+            <% end %>
+        </ul>
+    </div>
 </div>    

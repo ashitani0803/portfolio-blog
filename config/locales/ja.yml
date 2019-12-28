@@ -8,3 +8,15 @@ ja:
                 email: メールアドレス
                 title: タイトル
                 body: 本文
+
+    enums:
+        post:
+            status:
+                draft: 下書き
+                published: 公開中
+
+    views:
+        pagination:
+            previous: "<"
+            next: ">"
+            truncate: "..."

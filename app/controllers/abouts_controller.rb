@@ -1,5 +1,5 @@
 class AboutsController < ApplicationController
-    before_action :set_admin
+    before_action :set_sidebar
 
 	def profile
 	end
@@ -12,7 +12,9 @@ class AboutsController < ApplicationController
 
     private
 
-    def set_admin
+    def set_sidebar
         @user = User.find(1)
+        @tags = Tag.all
     end
+
 end

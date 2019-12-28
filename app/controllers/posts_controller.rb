@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
-    before_action :set_admin
+    before_action :set_sidebar
 
     def index
 		if params[:tag_id]
 			@tag = Tag.find(params[:tag_id])
-			@posts = @tag.posts
+			@posts = @tag.posts.page(params[:page]).per(10)
 		else
-			@posts = Post.all
+			@posts = Post.page(params[:page]).per(10)
 		end
     end
 
@@ -15,13 +15,14 @@ class PostsController < ApplicationController
     end
 
     def search
-        @posts = Post.search(params[:search])
+        @posts = Post.search(params[:search]).page(params[:page]).per(10)
     end
 
     private
 
-    def set_admin
+    def set_sidebar
         @user = User.find(1)
+        @tags = Tag.all
     end
 
 end

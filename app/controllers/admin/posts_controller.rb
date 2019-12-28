@@ -5,9 +5,9 @@ class Admin::PostsController < ApplicationController
     def index
         if params[:tag_id]
             @tag = Tag.find(params[:tag_id])
-            @posts = @tag.posts
+            @posts = @tag.posts.page(params[:page]).per(10)
         else
-            @posts = Post.all
+            @posts = Post.page(params[:page]).per(10)
         end
     end
 
