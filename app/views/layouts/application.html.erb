@@ -14,15 +14,17 @@
 		    <header>
 			    <div class="header-container">
 				    <div class="header-row">
-					    <h2>Railsブログ</h2>
+                        <%= link_to root_path do %>
+                            <h1>Railsブログ</h1>
+                        <% end %>
                         <% if user_signed_in? %>
 			    		    <%= link_to new_admin_post_path do %>
 				    		    <i class="fas fa-edit"></i>
 			    	    	<% end %>
                         <% end %>    
 	    			</div>
-		    		<nav class="header-nav">
-			    		<ul>
+		    		<nav>
+			    		<ul class="header-nav space-around">
                         <% if user_signed_in? %>
                             <li><%= link_to 'プロフィール', edit_admin_user_path %></li>
                             <li><%= link_to 'ブログ', admin_posts_path %></li>
@@ -36,12 +38,12 @@
 				    </nav>
 		    	</div>
 	    	</header>
-	    	<div class="main">
+            <div class="row">
                 <%= yield %>
-	    	</div>
-		    <footer>	
-			    <nav class="footer-left">
-				    <ul>
+            </div>
+		    <footer class="flex">	
+			    <nav>
+				    <ul class="footer-left">
                         <li>
                         <% if user_signed_in? %> 
                             <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" } do %>
@@ -58,7 +60,7 @@
 				    </ul>
 	    		</nav>
 		    	<div class="footer-right">
-			    	<p>©︎Copyright2019 Railsブログ All Rights Reserved.</p>
+			    	<li>©︎Copyright2019 Railsブログ All Rights Reserved.</li>
 			    </div>
 	    	</footer>
         </div>

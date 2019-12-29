@@ -1,14 +1,16 @@
 <div class="col-sm-12">
     <% @contacts.each do |contact| %>
-        <ul>
-            <li><%= contact.name%></li>
-            <li><%= contact.email %></li>
-            <li><%= contact.title %></li>
-            <li>
-                <%= link_to admin_contact_path(contact) do %>
-                    <%= strip_tags(contact.body.to_s).gsub(/[\n]/,"").strip.truncate(20) %>
-                <% end %>    
-            </li>
-        </ul>
+        <article>
+            <ul>
+                <li><%= contact.name%></li>
+                <li><%= contact.email %></li>
+                <li><%= contact.title %></li>
+                <li>
+                    <%= link_to admin_contact_path(contact) do %>
+                        <%= strip_tags(contact.body.to_s).gsub(/[\n]/,"").strip.truncate(20) %>
+                    <% end %>    
+                </li>
+            </ul>
+        </article>
     <% end %>
 </div>

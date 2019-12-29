@@ -1,15 +1,17 @@
 <div class="col-vs-12 col-sm-8">
-  <ul>
-    <li><%= @post.created_at.strftime('%Y-%m-%d') %>(更新日：<%= @post.updated_at.strftime('%Y-%m-%d') %>)</li>
-    <li><%= @post.status_i18n %></li>
-    <li><%= link_to '編集', edit_admin_post_path(@post) %></li>
-  </ul>
-	<h2><%= @post.title %></h2>
-  <ul>
-    <% @post.tags.each do |tag| %>
-      <li><%= link_to tag.tag_name, admin_posts_path(tag_id: tag.id) %></li>
-	 <% end %>
-  </ul>
-	<p><%= @post.body %></p>
+  <article>
+    <ul class="space-around">
+      <li><%= @post.created_at.strftime('%Y-%m-%d') %>(更新日：<%= @post.updated_at.strftime('%Y-%m-%d') %>)</li>
+      <li><%= @post.status_i18n %></li>
+      <li><%= link_to '編集', edit_admin_post_path(@post) %></li>
+    </ul>
+    <h2><%= @post.title %></h2>
+    <ul class="flex">
+      <% @post.tags.each do |tag| %>
+        <li><%= link_to tag.tag_name, admin_posts_path(tag_id: tag.id) %></li>
+     <% end %>
+    </ul>
+    <p><%= @post.body %></p>
+  </article>
 </div>
 

@@ -4,20 +4,20 @@
     <% end %>
     <% @posts.each do |post| %>
 	    <% if post.published? %>
-	    <ul>
-	        <li><%= post.created_at.strftime('%Y-%m-%d') %></li>
-	    	<li><%= post.status_i18n %></li>
-	    	<li><%= link_to '編集', edit_admin_post_path(post.id) %></li>
-	    </ul>
-	    <p><%= link_to post.title, admin_post_path(post.id) %></p>
-	    <ul>
-		    <% post.tags.each do |tag| %>
-		      <li><%= link_to tag.tag_name, admin_posts_path(tag_id: tag.id) %></li>
-		    <% end %>
-	    </ul>
-        <ul>
-            <li><%= strip_tags(post.body.to_s).gsub(/[\n]/,"").strip.truncate(30) %></li>
-        </ul>
+	    <article>
+	    	<ul class="space-around">
+		        <li><%= post.created_at.strftime('%Y-%m-%d') %></li>
+		    	<li><%= post.status_i18n %></li>
+		    	<li><%= link_to '編集', edit_admin_post_path(post.id) %></li>
+		    </ul>
+		    <h3><%= link_to post.title, admin_post_path(post.id) %></h3>
+		    <ul class="flex">
+			    <% post.tags.each do |tag| %>
+			      <li><%= link_to tag.tag_name, admin_posts_path(tag_id: tag.id) %></li>
+			    <% end %>
+		    </ul>
+	        <p><%= strip_tags(post.body.to_s).gsub(/[\n]/,"").strip.truncate(30) %></p>
+	    </article>
         <% end %>
     <% end %>
 </div>

@@ -12,9 +12,14 @@
         <% end %>
     </div>
     <div class="category">
+        <h3>カテゴリー</h3>
         <ul>
             <% tags.each do |tag| %>
-                <li><%= link_to tag.tag_name, posts_path(tag_id: tag.id) %></li>
+                <li>
+                    <%= link_to posts_path(tag_id: tag.id) do %>
+                        <%= tag.tag_name %>（<%= tag.posts.count %>）
+                    <% end %>
+                </li>
             <% end %>
         </ul>
     </div>

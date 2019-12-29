@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-	<h2>お問い合わせ<h2>
+	<h2>お問い合わせ</h2>
 	<%= form_with model: @contact, builder: ContactsHelper::ErrorFormBuilder, local: true, url: confirm_contacts_path do |f| %>
 		<div class="form-group">
 			<%= f.label :お名前 %><span>必須</span><br>

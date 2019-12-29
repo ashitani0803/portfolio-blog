@@ -30,3 +30,30 @@ li {
 	list-style: none;
 }
 
+.header-row {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.fa-edit {
+    position: absolute;
+    right: 0;
+}
+
+.space-around {
+	display: flex;
+	justify-content: space-around;
+}
+
+.flex {
+	display: flex;
+}
+
+.footer-left {
+	display: flex;
+}
+
+.footer-right {
+	margin-left: auto;
+}
