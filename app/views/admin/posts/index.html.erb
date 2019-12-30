@@ -3,22 +3,21 @@
         <%= @tag.tag_name %>
     <% end %>
     <% @posts.each do |post| %>
-	    <% if post.published? %>
 	    <article>
 	    	<ul class="space-around">
 		        <li><%= post.created_at.strftime('%Y-%m-%d') %></li>
 		    	<li><%= post.status_i18n %></li>
 		    	<li><%= link_to '編集', edit_admin_post_path(post.id) %></li>
 		    </ul>
-		    <h3><%= link_to post.title, admin_post_path(post.id) %></h3>
+		    <h2><%= link_to post.title, admin_post_path(post.id) %></h2>
 		    <ul class="flex">
 			    <% post.tags.each do |tag| %>
 			      <li><%= link_to tag.tag_name, admin_posts_path(tag_id: tag.id) %></li>
 			    <% end %>
 		    </ul>
-	        <p><%= strip_tags(post.body.to_s).gsub(/[\n]/,"").strip.truncate(30) %></p>
+	        <p><%= strip_tags(post.body.to_s).gsub(/[\n]/,"").strip.truncate(120) %></p>
 	    </article>
-        <% end %>
     <% end %>
+    <%= paginate @posts %>
 </div>
 
