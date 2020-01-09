@@ -3,7 +3,7 @@
     <% @posts.each do |post| %>
         <article>
             <p><%= link_to post.title, post_path(post.id) %></p>
-            <ul>
+            <ul class="flex">
                 <% post.tags.each do |tag| %>
                     <li><%= link_to tag.tag_name, posts_path(tag_id: tag.id) %></li>
                 <% end %>

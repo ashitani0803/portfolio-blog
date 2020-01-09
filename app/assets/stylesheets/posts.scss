@@ -1,3 +1,82 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+article {
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 35px;
+}
+
+.flex {
+	display: flex;
+
+	li {
+		padding: 3px 10px;
+		background: #f5f5f5;
+		margin-right: 10px;
+
+		a {
+		color: #333333;
+		}
+	}
+}
+
+.col-sm-4 {
+	padding: 0 15px 50px;
+}
+
+#sidebar-profile {
+	padding: 20px;
+	background: #fff;
+	margin-bottom: 35px;
+
+	h3 {
+		margin-top: 0;
+	}
+
+	.profile-name {
+		font-size: 20px;
+	}
+
+	.profile-body {
+		color: #7b7b7b;
+	}
+
+}
+
+#sidebar-category {
+	padding: 20px;
+	background: #fff;
+	margin-bottom: 35px;
+
+	h3 {
+		margin-top: 0;
+	}
+
+	li {
+		padding: 8px;
+		border-bottom: 1px solid #cccccc;
+	}
+}
+
+#sidebar-search {
+	padding: 20px;
+	background: #fff;
+
+	form {
+		height: 40px;
+	}
+
+	input {
+		height: 40px;
+		width: 200px;
+		border-radius: 25px;
+	}
+
+	button {
+		height: 40px;
+		width: 40px;
+		border-radius: 25px;
+	}
+}

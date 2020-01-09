@@ -11,3 +11,42 @@
 .errors li {
     color: red;
 }
+
+.form {
+	width: 50%;
+	margin: 0 auto 80px;
+
+	label {
+		margin-bottom: 20px;
+	}
+
+	.field {
+		margin:35px 0;
+
+		strong {
+			margin-left: 10px;
+			font-size: 13px;
+			padding: 3px 5px;
+			background: red;
+			color: #fff;
+			border-radius: 5px;
+		}
+
+		input {
+			width: 60%;
+		}
+
+		textarea {
+			width: 100%;
+			height: 300px;
+		}
+	}
+
+	.actions input {
+		width: auto;
+		margin-right: 35px;
+	}
+}
+
+
+

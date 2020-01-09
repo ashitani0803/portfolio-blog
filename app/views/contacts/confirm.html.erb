@@ -1,32 +1,32 @@
 <div class="col-sm-12">
-	<h2>お問い合わせ確認画面</h2>
-	<%= form_with model: @contact, builder: ContactsHelper::ErrorFormBuilder, local: true, url: contacts_path do |f| %>
-		<div class="form-group">
-			<%= f.label :お名前 %><br>
-			<%= @contact.name %>
-			<%= f.hidden_field :name %>
-		</div>
-		<div class="form-group">
-			<%= f.label :メールアドレス %><br>
-			<%= @contact.email %>
-			<%= f.hidden_field :email %>
-		</div>
-		<div class="form-group">
-			<%= f.label :題名 %><br>
-			<%= @contact.title %>
-			<%= f.hidden_field :title %>
-		</div>
-		<div class="form-group">
-			<%= f.label :メッセージ本文 %><br>
-			<%= @contact.body %>
-			<%= f.hidden_field :body %>
-		</div>
-		<div class="form-group">
-			<%= f.submit "お問い合わせ画面に戻る", name: "back" %>
-		</div>
-		<div class="form-group"><br>
-			<%= f.submit "送信" %>
-		</div>
-	<% end %>
+	<div class="form">
+		<h2>お問い合わせ確認画面</h2>
+		<%= form_with model: @contact, builder: ContactsHelper::ErrorFormBuilder, local: true, url: contacts_path do |f| %>
+			<div class="field">
+				<%= f.label :お名前 %><strong>必須</strong><br>
+				<%= @contact.name %>
+				<%= f.hidden_field :name %>
+			</div>
+			<div class="field">
+				<%= f.label :メールアドレス %><strong>必須</strong><br>
+				<%= @contact.email %>
+				<%= f.hidden_field :email %>
+			</div>
+			<div class="field">
+				<%= f.label :題名 %><br>
+				<%= @contact.title %>
+				<%= f.hidden_field :title %>
+			</div>
+			<div class="field">
+				<%= f.label :メッセージ本文 %><br>
+				<%= @contact.body %>
+				<%= f.hidden_field :body %>
+			</div>
+			<div class="actions"><br>
+				<%= f.submit "戻る", name: "back" %>
+				<%= f.submit "送信" %>
+			</div>
+		<% end %>
+	</div>
 </div>
 

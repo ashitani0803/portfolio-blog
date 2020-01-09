@@ -1,26 +1,31 @@
-<div class="col-xs-12 col-sm-4">
-    <div class="profile">
-        <p><%= user.name %>のプロフィール</p>
-        <p><%= attachment_image_tag user, :image, size: '200x200' %></p>
-        <p><%= user.name %></p>
-        <p><%= strip_tags(user.profile.to_s).gsub(/[\n]/,"").strip.truncate(50) %></p>
+<aside class="col-xs-12 col-sm-4">
+    <div class="col-xs-12" id="sidebar-profile" >
+        <div class="profile">
+            <h3>プロフィール</h3>
+            <p><%= attachment_image_tag user, :image, size: '200x200' %></p>
+            <p class="profile-name"><%= user.name %></p>
+            <p class="profile-body"><%= strip_tags(user.profile.to_s).gsub(/[\n]/,"").strip.truncate(50) %></p>
+        </div>
     </div>
-    <div class="form-group">
+    <div class="col-xs-12" id="sidebar-category" >
+        <h3>カテゴリー</h3>
+            <ul>
+                <% tags.each do |tag| %>
+                    <li>
+                        <%= link_to posts_path(tag_id: tag.id) do %>
+                            <%= tag.tag_name %>（<%= tag.posts.count %>）
+                        <% end %>
+                    </li>
+                <% end %>
+            </ul>
+    </div>
+    <div class="col-xs-12" id="sidebar-search">
         <%= form_tag search_posts_path, method: 'get' do %>
-            <%= text_field_tag :search %>
-            <%= submit_tag 'Search', :body => nil %>
+            <%= text_field_tag :search, '', :placeholder => " 検索" %>
+            <%= button_tag type: "submit", :body => nil do %>
+                <i class="fas fa-search"></i>
+            <% end %>
         <% end %>
     </div>
-    <div class="category">
-        <h3>カテゴリー</h3>
-        <ul>
-            <% tags.each do |tag| %>
-                <li>
-                    <%= link_to posts_path(tag_id: tag.id) do %>
-                        <%= tag.tag_name %>（<%= tag.posts.count %>）
-                    <% end %>
-                </li>
-            <% end %>
-        </ul>
-    </div>
-</div>    
+</aside>
+
