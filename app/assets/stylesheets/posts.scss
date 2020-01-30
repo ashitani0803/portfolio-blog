@@ -2,12 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-article {
-	background: #fff;
-	padding: 20px;
-	margin-bottom: 35px;
-}
-
 .flex {
 	display: flex;
 
@@ -23,17 +17,13 @@ article {
 }
 
 .col-sm-4 {
-	padding: 0 15px 50px;
+	padding: 0 15px 0;
 }
 
 #sidebar-profile {
 	padding: 20px;
 	background: #fff;
 	margin-bottom: 35px;
-
-	h3 {
-		margin-top: 0;
-	}
 
 	.profile-name {
 		font-size: 20px;
@@ -43,6 +33,13 @@ article {
 		color: #7b7b7b;
 	}
 
+	#image-box {
+		text-align: center;
+
+		img {
+			margin: 20px 0;
+		}
+	}
 }
 
 #sidebar-category {
@@ -61,22 +58,35 @@ article {
 }
 
 #sidebar-search {
-	padding: 20px;
+	padding: 20px 10px 20px;
 	background: #fff;
+	margin-bottom: 0;
 
 	form {
-		height: 40px;
+		height: 30px;
 	}
 
 	input {
-		height: 40px;
-		width: 200px;
-		border-radius: 25px;
+		height: 30px;
+		width: 155px;
+		font-size: 18px;
+		border-radius: 3px;
 	}
 
 	button {
-		height: 40px;
-		width: 40px;
-		border-radius: 25px;
+		height: 30px;
+		width: 30px;
+		border-radius: 3px;
+		background: #dddddd;
 	}
+}
+
+.result {
+	font-size: 30px;
+	margin-bottom: 30px;
+	font-weight: 500;
+}
+
+.post-body {
+	margin: 0;
 }

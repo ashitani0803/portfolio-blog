@@ -2,7 +2,7 @@ class Admin::ContactsController < ApplicationController
     before_action :admin_user?
 
     def index
-        @contacts = Contact.all
+        @contacts = Contact.all.order(id: "DESC").page(params[:page]).per(10)
     end
 
     def show

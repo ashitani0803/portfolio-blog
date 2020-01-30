@@ -4,9 +4,9 @@ class PostsController < ApplicationController
     def index
 		if params[:tag_id]
 			@tag = Tag.find(params[:tag_id])
-			@posts = @tag.posts.page(params[:page]).per(10)
+			@posts = @tag.posts.all.order(id: "DESC").page(params[:page]).per(10)
 		else
-			@posts = Post.page(params[:page]).per(10)
+			@posts = Post.all.order(id: "DESC").page(params[:page]).per(10)
 		end
     end
 
@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     end
 
     def search
-        @posts = Post.search(params[:search]).page(params[:page]).per(10)
+        @posts = Post.search(params[:search]).order(id: "DESC").page(params[:page]).per(10)
     end
 
     private

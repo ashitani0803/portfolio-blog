@@ -5,3 +5,36 @@
 #user_remember_me {
 	width: auto;
 }
+
+.space-between {
+	display: flex;
+	justify-content: space-between;
+
+	h2 {
+		margin-top: 0;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.contact-title {
+	margin: 10px 0;
+}
+
+.contact-body1 {
+	margin-bottom: 0;
+}
+
+.contact-name {
+	margin: 20px 0 15px;
+}
+
+.contact-body2 {
+	margin: 15px 0 0;
+}
+
+.success {
+	margin-bottom: 15px;
+}

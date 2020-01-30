@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    devise_for :user, path: "admin"
+    devise_for :user, path: "admin", skip: [:passwords]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 	root 'posts#index'
 	get '/profile' => 'abouts#profile'

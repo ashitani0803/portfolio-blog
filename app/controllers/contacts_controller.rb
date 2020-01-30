@@ -22,6 +22,8 @@ class ContactsController < ApplicationController
 	end
 
     def complete
+    	@user = User.find(1)
+    	@tags = Tag.all
     end
 
 	private

@@ -1,8 +1,19 @@
-<div class="col-sm-12">
-    <h2>送信が完了しました！</h2>
-    <p>
-        お問い合わせいただきありがとうございます。<br>
-        数日中に返信いたしますので少々お待ちください。
-    </p>
+<div class="col-xs-12 col-sm-9 complete">
+	<div class="main-box">
+		<h2>メッセージ送信が完了しました！</h2>
+
+	    <p class="contact-receive">お問い合わせを受け付けました。</p>
+
+	    <p class="thanks">
+	    	この度はお問い合わせいただきまして、有難うございました。<br>
+	        メッセージでいただいた以下の内容は確認させていただきます。<br>
+	        数日中に返信いたしますので少々お待ちください。
+	    </p>
+
+	    <p class="top-link"><%= link_to 'ブログTOPに戻る', root_path %></p>
+	</div>
+    
 </div>
+
+<%= render 'posts/search_form', user: @user, tags: @tags %>
 

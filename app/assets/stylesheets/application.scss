@@ -39,6 +39,10 @@ body {
 	font-size: 18px;
 }
 
+h2, h3 {
+	margin: 0;
+}
+
 .container {
 	width: 100%;
 	height: 100%;
@@ -51,7 +55,7 @@ body {
 }
 
 header {
-	margin-bottom: 40px;
+	margin-bottom: 50px;
 }
 
 .header-row {
@@ -92,6 +96,103 @@ header {
 	justify-content: space-around;
 }
 
+.col-xs-12 {
+	margin-bottom: 70px;
+
+	nav {
+		text-align: center;
+
+		.pagination {
+			display: inline-block;
+		}
+	}
+}
+
+.col-sm-12 {
+	margin-bottom: 70px;
+
+	nav {
+		text-align: center;
+
+		.pagination {
+			display: inline-block;
+			margin: 10px 0 0;
+		}
+	}
+}
+
+.pagination {
+	justify-content: center;
+}
+
+article {
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 35px;
+
+	.flex {
+		margin: 10px 0;
+	}
+}
+
+.article-show {
+	padding: 35px;
+
+}
+
+.main-box {
+	padding: 35px;
+	background: #fff;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.form {
+	width: 100%;
+	margin: 0 auto 80px;
+	padding: 50px 100px;
+	background: #fff;
+
+	label {
+		margin-bottom: 20px;
+	}
+
+	.field {
+		margin:35px 0;
+
+		strong {
+			margin-left: 10px;
+			font-size: 13px;
+			padding: 3px 5px;
+			background: red;
+			color: #fff;
+			border-radius: 5px;
+		}
+
+		input {
+			width: 60%;
+		}
+
+		textarea {
+			width: 100%;
+			height: 300px;
+		}
+
+		.trix-button {
+			height: 34px;
+			width: 47px;
+		}
+	}
+
+	.actions input {
+		width: auto;
+		margin-right: 35px;
+	}
+}
+
+
 .footer-nav {
 	display: flex;
 	margin-bottom: 0;
@@ -108,7 +209,7 @@ header {
 	}
 
 	li:last-child {
-	margin-left: auto;
+		margin-left: auto;
 	}
 }
 

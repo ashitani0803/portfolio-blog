@@ -1,16 +1,23 @@
 <div class="col-sm-12">
     <% @contacts.each do |contact| %>
-        <article>
-            <ul>
-                <li><%= contact.name%></li>
-                <li><%= contact.email %></li>
-                <li><%= contact.title %></li>
-                <li>
-                    <%= link_to admin_contact_path(contact) do %>
-                        <%= strip_tags(contact.body.to_s).gsub(/[\n]/,"").strip.truncate(20) %>
-                    <% end %>    
-                </li>
-            </ul>
-        </article>
+        <%= link_to admin_contact_path(contact) do %>
+            <article>
+                <div class="space-between">
+                    <h2><%= contact.name %></h2>
+                    <% if Date.today.strftime("%Y%m%d") == contact.created_at.strftime("%Y%m%d") %>
+                        <time><%= contact.created_at.strftime('%H:%m') %></time>
+                    <% elsif Date.today.strftime("%Y") == contact.created_at.strftime("%Y") %>
+                        <time><%= contact.created_at.strftime('%m月%d日') %></time>
+                    <% else %>
+                        <time><%= contact.created_at.strftime('%Y/%m/%d') %></time>
+                    <% end %>
+                </div>
+                <h3 class="contact-title"><%= contact.title %></h3>
+                <p class="contact-body1">
+                    <%= strip_tags(contact.body.to_s).gsub(/[\n]/,"").strip.truncate(50) %>
+                </p>
+            </article>
+        <% end %>
     <% end %>
+    <%= paginate @contacts %>
 </div>

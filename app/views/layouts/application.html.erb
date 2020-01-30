@@ -14,13 +14,17 @@
 		    <header>
 			    <div class="header-container">
 				    <div class="header-row">
-                        <%= link_to root_path do %>
-                            <h1>Railsブログ</h1>
-                        <% end %>
                         <% if user_signed_in? %>
+                            <%= link_to admin_posts_path do %>
+                                <h1>Railsブログ</h1>
+                            <% end %>
 			    		    <%= link_to new_admin_post_path do %>
 				    		    <i class="fas fa-edit"></i>
 			    	    	<% end %>
+                        <% else %>
+                            <%= link_to root_path do %>
+                                <h1>Railsブログ</h1>
+                            <% end %>
                         <% end %>    
 	    			</div>
 		    		<nav>
